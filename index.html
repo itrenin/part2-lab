@@ -1,0 +1,86 @@
+<!--
+Задание 1:
+
+При помощи DOM API создайте DOM-элемент с тегом div
+Добавьте созданный элемент в DOM-дерево
+При помощи DOM API, поместите в элемент текст: 'Этот элемент создан при помощи DOM API'
+
+Задание 2:
+
+При помощи DOM API создайте элемент с тегом div
+Задайте созданному элементу класс 'inner'
+При помощи DOM API, поместите в элемент текст: 'Этот элемент тоже создан при помощи DOM API'
+Поместите созданный элемент внутрь элемента, который был создан в предыдущем задании
+
+Задание 3:
+
+Возьмите код из предыдущего задания и при помощи DOM API задайте созданному элементу CSS-стиль 'color: red'
+
+Заданий 4:
+
+Возьмите код первого задания
+Добавьте обработчик события click на созданный элемент
+При клике на элемент, в консоль должен выводиться текст: 'Этот текст говорит о том, что я всё сделал правильно'
+Откройте страничку в браузере
+Кликните на элемент
+Убедитесь, что после клика на элемент в консоли появилась надпись с текстом 'Этот текст говорит о том, что я всё сделал правильно'
+
+Задание 5:
+
+При помощи DOM API создайте элемент с тегом a
+Задайте созданному элементу атрибут href и запишите в этот атрибут значение  'https://loftschool.com'
+Добавьте созданный элемент в DOM-дерево
+Добавьте обработчик события click на созданный элемент
+Напишите код обработчика таким образом, чтобы при клике на созданный элемент в консоли выводилась надпись 'Я кликнул на ссылку HREF'. Вместо HREF необходимо подставить значение атрибута href. Но перехода по ссылке быть не должно.
+
+Задание 6:
+
+При помощи DOM API создайте input и button
+Поместите созданные элементы на страницу
+При клике на кнопку необходимо выводить в консоль значение из текстового поля
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Step1</title>
+</head>
+<body>
+    
+
+    <script>
+        //Задание 1
+        const element = document.createElement('div');
+        document.body.appendChild(element);
+        element.textContent ='Этот элемент создан при помощи DOM API';
+
+        //Задание 2
+        const element1 = document.createElement('div');
+        element.appendChild(element1);
+        element1.classList.add('inner');
+        element1.textContent = 'Этот элемент тоже создан при помощи DOM API';
+        //Задание 3
+        element1.style.color = 'red';
+        //Задание 4
+        element1.addEventListener('click', function(){
+            console.log('Этот текст говорит о том, что я всё сделал правильно');
+        });
+        //задание 5
+        const link = document.createElement('a');
+        document.body.appendChild(link);
+        link.setAttribute('href', 'https://loftschool.com');
+        link.textContent = 'ссылка';
+        link.addEventListener('click', function(e){
+            e.preventDefault();
+            console.log('Я кликнул на ссылку ' + link.getAttribute('href'));
+        });
+
+
+        </script>
+</body>
+</html>
